@@ -239,12 +239,12 @@ VARIABLE moves
     .&quot;   ? This help screen.&quot; cr ;
 
 ( key -- ) : handleKey CASE 
-    113 OF leaveGame ENDOF \ &#39;q&#39;
-    120 OF leaveGame ENDOF \ &#39;x&#39;
-    104 OF doLeft  ENDOF   \ &#39;l&#39;
-    106 OF doDown  ENDOF   \ &#39;j&#39;
-    107 OF doUp    ENDOF   \ &#39;k&#39;
-    108 OF doRight ENDOF   \ &#39;l&#39;
+    [char] q OF leaveGame ENDOF \ &#39;q&#39;
+    [char] x OF leaveGame ENDOF \ &#39;x&#39;
+    [char] h OF doLeft  ENDOF   \ &#39;h&#39;
+    [char] j OF doDown  ENDOF   \ &#39;j&#39;
+    [char] k OF doUp    ENDOF   \ &#39;k&#39;
+    [char] l OF doRight ENDOF   \ &#39;l&#39;
      68 OF doLeft  ENDOF   \ arrows
      66 OF doDown  ENDOF
      65 OF doUp    ENDOF
@@ -424,12 +424,12 @@ cr bye</code></pre>
 <a class="sourceLine" id="cb2-135" title="135">                }</a>
 <a class="sourceLine" id="cb2-136" title="136">                <span class="kw">static</span> <span class="dt">void</span> handleKey( <span class="dt">int</span> asciiKey ) {</a>
 <a class="sourceLine" id="cb2-137" title="137">                    <span class="kw">switch</span> ( asciiKey ) {</a>
-<a class="sourceLine" id="cb2-138" title="138">                        <span class="kw">case</span> <span class="dv">113</span>: leaveGame(); <span class="kw">break</span>;  <span class="co">// &#39;q&#39;</span></a>
-<a class="sourceLine" id="cb2-139" title="139">                        <span class="kw">case</span> <span class="dv">120</span>: leaveGame(); <span class="kw">break</span>;  <span class="co">// &#39;x&#39;</span></a>
-<a class="sourceLine" id="cb2-140" title="140">                        <span class="kw">case</span> <span class="dv">104</span>: doLeft();    <span class="kw">break</span>;  <span class="co">// &#39;l&#39;</span></a>
-<a class="sourceLine" id="cb2-141" title="141">                        <span class="kw">case</span> <span class="dv">106</span>: doDown();    <span class="kw">break</span>;  <span class="co">// &#39;j&#39;</span></a>
-<a class="sourceLine" id="cb2-142" title="142">                        <span class="kw">case</span> <span class="dv">107</span>: doUp();      <span class="kw">break</span>;  <span class="co">// &#39;k&#39;</span></a>
-<a class="sourceLine" id="cb2-143" title="143">                        <span class="kw">case</span> <span class="dv">108</span>: doRight();   <span class="kw">break</span>;  <span class="co">// &#39;l&#39;</span></a>
+<a class="sourceLine" id="cb2-138" title="138">                        <span class="kw">case</span> <span class="ch">&#39;q&#39;</span>: leaveGame(); <span class="kw">break</span>;  <span class="co">// &#39;q&#39;</span></a>
+<a class="sourceLine" id="cb2-139" title="139">                        <span class="kw">case</span> <span class="ch">&#39;x&#39;</span>: leaveGame(); <span class="kw">break</span>;  <span class="co">// &#39;x&#39;</span></a>
+<a class="sourceLine" id="cb2-140" title="140">                        <span class="kw">case</span> <span class="ch">&#39;l&#39;</span>: board.doLeft();    <span class="kw">break</span>;  <span class="co">// &#39;l&#39;</span></a>
+<a class="sourceLine" id="cb2-141" title="141">                        <span class="kw">case</span> <span class="ch">&#39;j&#39;</span>: board.doDown();    <span class="kw">break</span>;  <span class="co">// &#39;j&#39;</span></a>
+<a class="sourceLine" id="cb2-142" title="142">                        <span class="kw">case</span> <span class="ch">&#39;k&#39;</span>: board.doUp();      <span class="kw">break</span>;  <span class="co">// &#39;k&#39;</span></a>
+<a class="sourceLine" id="cb2-143" title="143">                        <span class="kw">case</span> <span class="ch">&#39;l&#39;</span>: board.doRight();   <span class="kw">break</span>;  <span class="co">// &#39;l&#39;</span></a>
 <a class="sourceLine" id="cb2-144" title="144">                        <span class="kw">case</span>  <span class="dv">68</span>: doLeft();    <span class="kw">break</span>;  <span class="co">// arrows</span></a>
 <a class="sourceLine" id="cb2-145" title="145">                        <span class="kw">case</span>  <span class="dv">66</span>: doDown();    <span class="kw">break</span>;</a>
 <a class="sourceLine" id="cb2-146" title="146">                        <span class="kw">case</span>  <span class="dv">65</span>: doUp();      <span class="kw">break</span>;</a>
@@ -642,12 +642,12 @@ cr bye</code></pre>
 <a class="sourceLine" id="cb3-155" title="155">                }</a>
 <a class="sourceLine" id="cb3-156" title="156">                <span class="dt">void</span> handleKey( <span class="dt">int</span> asciiKey ) {</a>
 <a class="sourceLine" id="cb3-157" title="157">                    <span class="kw">switch</span> ( asciiKey ) {</a>
-<a class="sourceLine" id="cb3-158" title="158">                        <span class="kw">case</span> <span class="dv">113</span>: leaveGame(); <span class="kw">break</span>;  <span class="co">// &#39;q&#39;</span></a>
-<a class="sourceLine" id="cb3-159" title="159">                        <span class="kw">case</span> <span class="dv">120</span>: leaveGame(); <span class="kw">break</span>;  <span class="co">// &#39;x&#39;</span></a>
-<a class="sourceLine" id="cb3-160" title="160">                        <span class="kw">case</span> <span class="dv">104</span>: board.doLeft();    <span class="kw">break</span>;  <span class="co">// &#39;l&#39;</span></a>
-<a class="sourceLine" id="cb3-161" title="161">                        <span class="kw">case</span> <span class="dv">106</span>: board.doDown();    <span class="kw">break</span>;  <span class="co">// &#39;j&#39;</span></a>
-<a class="sourceLine" id="cb3-162" title="162">                        <span class="kw">case</span> <span class="dv">107</span>: board.doUp();      <span class="kw">break</span>;  <span class="co">// &#39;k&#39;</span></a>
-<a class="sourceLine" id="cb3-163" title="163">                        <span class="kw">case</span> <span class="dv">108</span>: board.doRight();   <span class="kw">break</span>;  <span class="co">// &#39;l&#39;</span></a>
+<a class="sourceLine" id="cb3-158" title="158">                        <span class="kw">case</span> <span class="ch">&#39;q&#39;</span>: leaveGame(); <span class="kw">break</span>;  <span class="co">// &#39;q&#39;</span></a>
+<a class="sourceLine" id="cb3-159" title="159">                        <span class="kw">case</span> <span class="ch">&#39;x&#39;</span>: leaveGame(); <span class="kw">break</span>;  <span class="co">// &#39;x&#39;</span></a>
+<a class="sourceLine" id="cb3-160" title="160">                        <span class="kw">case</span> <span class="ch">&#39;l&#39;</span>: board.doLeft();    <span class="kw">break</span>;  <span class="co">// &#39;l&#39;</span></a>
+<a class="sourceLine" id="cb3-161" title="161">                        <span class="kw">case</span> <span class="ch">&#39;j&#39;</span>: board.doDown();    <span class="kw">break</span>;  <span class="co">// &#39;j&#39;</span></a>
+<a class="sourceLine" id="cb3-162" title="162">                        <span class="kw">case</span> <span class="ch">&#39;k&#39;</span>: board.doUp();      <span class="kw">break</span>;  <span class="co">// &#39;k&#39;</span></a>
+<a class="sourceLine" id="cb3-163" title="163">                        <span class="kw">case</span> <span class="ch">&#39;l&#39;</span>: board.doRight();   <span class="kw">break</span>;  <span class="co">// &#39;l&#39;</span></a>
 <a class="sourceLine" id="cb3-164" title="164">                        <span class="kw">case</span>  <span class="dv">68</span>: board.doLeft();    <span class="kw">break</span>;  <span class="co">// arrows</span></a>
 <a class="sourceLine" id="cb3-165" title="165">                        <span class="kw">case</span>  <span class="dv">66</span>: board.doDown();    <span class="kw">break</span>;</a>
 <a class="sourceLine" id="cb3-166" title="166">                        <span class="kw">case</span>  <span class="dv">65</span>: board.doUp();      <span class="kw">break</span>;</a>
