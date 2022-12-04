@@ -4,8 +4,72 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>blog index</title>
+  <title>d-pondering</title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
   <style type="text/css">@charset "UTF-8";
 
 @font-face {
@@ -409,11 +473,11 @@ padding-bottom: 1rem;
 p.byline { font-size: 1.2rem; }
 
 table {
-border-top: 2px solid #839496;
-border-bottom: 2px solid #839496;
+border-top: 2px solid black;
+border-bottom: 2px solid black;
 }
 th {
-border-bottom: 1px solid #839496;
+border-bottom: 1px solid black;
 }
 td, th {
 font-size: 1.6rem;
@@ -505,48 +569,114 @@ a.sourceLine::before { text-decoration: none; }
 <body>
 <article>
 <header>
-<h1 class="title">blog index</h1>
+<h1 class="title">d-pondering</h1>
 </header>
-<table>
-<col style="width:20%">
-<col style="width:80%">
-<thead>
-<tr>
-<th>
-Page
-</th>
-<th>
-Description
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="sumtypes.html">Sumtype musings</a>
-</td>
-<td>
-Sumtypes are part of algebraic data types and a core foundation of a solid type system.
-</td>
-</tr>
-<tr>
-<td>
-<a href="puzzle15.html">‘Puzzle 15’</a>
-</td>
-<td>
-Inspired by <a href="http://webassembly.arsdnet.net/number">ADR’s numbers game</a>, some thoughts and observations.
-</td>
-</tr>
-<tr>
-<td>
-<a href="d-pondering.html">d-pondering</a>
-</td>
-<td>
-D is considering adding <em>sumtypes</em> to the language. It’s generated a lot of enthusiasm and forum discussion. Some of my opinion on sumtypes and the language eccosystem as a whole.
-</td>
-</tr>
-</tbody>
-</table>
+<nav id="TOC">
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#what-are-the-basics">What are the “basics”?</a>
+<ul>
+<li><a href="#who-should-use-d">Who should use D?</a></li>
+</ul></li>
+<li><a href="#path-1">Path 1</a></li>
+<li><a href="#path-2">Path 2</a></li>
+<li><a href="#other-paths">Other paths</a>
+<ul>
+<li><a href="#status-quo">Status quo</a></li>
+<li><a href="#d-as-a-shell-programming-language">D as a shell (programming language)</a></li>
+<li><a href="#other">Other</a></li>
+</ul></li>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#afterthought">Afterthought</a></li>
+</ul>
+</nav>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>Walter Bright announced a draft DIP for adding sumtypes to the D programming language.<span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"></input><span class="sidenote"><a href="https://forum.dlang.org/thread/tm48m8$u4g$1@digitalmars.com" class="uri">https://forum.dlang.org/thread/tm48m8$u4g$1@digitalmars.com</a><br />
+<br />
+</span></span> <span class="sidenote-wrapper"><label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"></input><span class="sidenote">The proposed DIP <a href="https://github.com/WalterBright/DIPs/blob/sumtypes/DIPs/1NNN-(wgb).md" class="uri">https://github.com/WalterBright/DIPs/blob/sumtypes/DIPs/1NNN-(wgb).md</a><br />
+<br />
+</span></span> As of December 3rd, 2022, there are over 100 replies on the forum and similar discussions on Discord and the IRC channel. A reply<span class="sidenote-wrapper"><label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"></input><span class="sidenote"><a href="https://forum.dlang.org/post/xamclovgxzzrjzntengl@forum.dlang.org" class="uri">https://forum.dlang.org/post/xamclovgxzzrjzntengl@forum.dlang.org</a><br />
+<br />
+</span></span> by John Colvin is part<span class="sidenote-wrapper"><label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle"></input><span class="sidenote">The other part, is that it would be useful to have some static site generator tools and get to documenting a lot more.<br />
+<br />
+</span></span> of what inspired/motivated me to revisit this blog thing I dabbled with one break a while ago.</p>
+<p>John brings up, and it’s been pointed out by others too, so he is not alone, that D focuses a lot on adding “another killer feature” while neglecting the quality of a lot of other prior killer features that aren’t quite working 100% yet and challenges whether it’s an improvement to have these kinds of distractions that spread already few compiler developers over ever increasing number of features. At the end, John has an appeal to revisit the <em>basics</em> of the language.</p>
+</section>
+<section id="what-are-the-basics" class="level1">
+<h1>What are the “basics”?</h1>
+<p>D has had taglines and jingles in the past to describe it. None of those get talked about much right now. From lurking on the forums, newsgroups, several Beerconfs<span class="sidenote-wrapper"><label for="sn-4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-4" class="margin-toggle"></input><span class="sidenote"><a href="https://wiki.dlang.org/Beerconf" class="uri">https://wiki.dlang.org/Beerconf</a><br />
+<br />
+</span></span>, and observing the reactions on several DIPS, to this point in time, D is a systems programming language that goes out of it’s way to be C compatible. In my mind, this is what guides Walter with D, with a dash of <span class="citation" data-cites="safe">@safe</span>. I’ll flesh this out a bit in <a href="#path-1">Path 1</a>. However, one of the strength’s of D is the meta programming available at compile time and the composability of the same function whether it’s at compile time or run time. When programmers write higher level like functions, it’s a tremendously powerful tool. However the complexity of this quickly gets out of hand, unless there is assistance from the compiler. This is often achieved by lower constructs to a set of primitive functions that can be proven to be sound with some sort of logic, such as lambda calculus for ML languages. D doesn’t currently have that, though it is desperately wanted (needed) by some users. I’ll say a bit more about this in <a href="#path-2">Path 2</a></p>
+<section id="who-should-use-d" class="level2">
+<h2>Who should use D?</h2>
+<p>Before talking about more specifics there, who are the users that D is well suited for? As a project manager and the choice of language comes up, some of the initial questions are:</p>
+<ol type="1">
+<li>What platform(s) is this going to run on? Linux, Windows, Android, iOS, browser, etc.</li>
+<li>What is the architecture of the overall system (microservices, monolithic, databases, webservers, etc)</li>
+<li>What existing frameworks are leverageable?</li>
+<li>Availability of developers.</li>
+</ol>
+<p>To be blunt, I don’t think D is a good choice for most windows programs, especially if they are application oriented.<span class="sidenote-wrapper"><label for="sn-5" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-5" class="margin-toggle"></input><span class="sidenote">Caveat, there are games programmer’s that seem to be having success and consider the hassles (like writing custom object.d and runtime) worth it.<br />
+<br />
+</span></span> .NET and the tooling and eccosystem usually makes a lot more sense. D has a few frameworks and is getting more everyday, but still pales in comparison to enterprise solutions available for C, C++, C#, Java, etc.</p>
+<p>At the end of the day, D is appealing to hobbyists and small teams that are going to implement everything themselves. There are a few very successful cases of this and D has been a secret weapon for them as the language does allow large volumes of <em>efficient</em> code to be written quickly. There is a good power-to- weight ratio here.</p>
+<p>I’ve used D as my scripting language to replace all the Perl and most of the Bash that I had written. It compiles fast and has better programming constructs than a shell language. It is more than enough for the core Perl or Python replacement. Where it comes up short is the ubiquitous binding that have been made for Python.</p>
+<p>Another place that D doesn’t get advertised for much, is that I think it would be a great first language. The syntax is quite intuitive and standard library is rich enough that more that covers the needs of the first programming courses. And without a doubt, learning D makes a better programmer, as often happens whenever a new language or paradigm is learned.</p>
+<p>That said, D just doesn’t make sense to use for most commercial projects. What would need to change to have D be more competitive as a language choice for commercial projects? That leads to <a href="#path-1">Path 1</a> and <a href="#path-2">Path 2</a>.</p>
+</section>
+</section>
+<section id="path-1" class="level1">
+<h1>Path 1</h1>
+<p>In this path, I see D honing the features it already has and deprecating some of the features that it does have. Perfect <code>importC</code> so that</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode d"><code class="sourceCode d"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">import</span> libcurl; </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="kw">import</span> libxml; </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="kw">import</span> zlib;</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>.</span></code></pre></div>
+<p>just do the right thing<span class="sidenote-wrapper"><label for="sn-6" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-6" class="margin-toggle"></input><span class="sidenote">For example the argument order when using a function pointers between C and D can be a surprise sometimes. And it doesn’t necessarily error or warn.<br />
+<br />
+</span></span> and D is the meta program that glues established C libraries together in a much safer and more convenient way. In an extreme version, the garbage collector is removed or replaced with something that is more akin to C allocators, maybe with pools or slabs informed from data flow analysis. If D can make C safe, that would be a win.</p>
+<p>Anyway, I could see D really being successful in this space. Ideally, the legacy code bases that are in C would be [auto] converted to D and then maintained in D.<span class="sidenote-wrapper"><label for="sn-7" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-7" class="margin-toggle"></input><span class="sidenote">It’s actually quite easy to port moderate C programs to D. However, it’s not easy to convert them to idiomatic D. And to be super successful, libraries would need to be ABI compatible with current ones, such that downstream consumers could continue with no changes.<br />
+<br />
+</span></span></p>
+</section>
+<section id="path-2" class="level1">
+<h1>Path 2</h1>
+<p>A different path for D is where it starts to break away from it’s C legacy and become a higher level language. It would need to embrace modern language concepts like Algebraic Data Types and eventually convert the existing <code>union</code> and <code>struct</code> constructs into lowerings of sumtypes and product types, records etc.<span class="sidenote-wrapper"><label for="sn-8" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-8" class="margin-toggle"></input><span class="sidenote"><a href="https://www.amazon.com/Types-Programming-Languages-MIT-Press/dp/0262162091" class="uri">https://www.amazon.com/Types-Programming-Languages-MIT-Press/dp/0262162091</a><br />
+<br />
+</span></span> Types would need to be real types, like <code>bool</code> is a set with <code>false</code> and <code>true</code> members and has nothing to do with bits in an integer. Basically, the innards of the abstractions of the compiler need to be sound and the D language implemented in terms of them. That would include that types are values and can be operated by functions just like an <code>int</code> is today. This results in a different language than D is today, though if realized, might be a very appealing language.</p>
+</section>
+<section id="other-paths" class="level1">
+<h1>Other paths</h1>
+<section id="status-quo" class="level2">
+<h2>Status quo</h2>
+<p>The most likely case is that D continues as it has been for the last 10 years. There will be enough users for beerconf<span class="sidenote-wrapper"><label for="sn-9" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-9" class="margin-toggle"></input><span class="sidenote"><a href="https://wiki.dlang.org/Beerconf" class="uri">https://wiki.dlang.org/Beerconf</a><br />
+<br />
+</span></span> and if there is continued corporate sponsorship, there will be D conferences that are discussing the same sorts of issues that seem to be recurring within the community. I don’t see any serious growth with the status quo, and once Walter isn’t actively involved, that activity will slowly decline.</p>
+</section>
+<section id="d-as-a-shell-programming-language" class="level2">
+<h2>D as a shell (programming language)</h2>
+<p>A dialect of D could make things like calling the shell a lot more easy and it would be even nicer to use as a Bash replacement.</p>
+</section>
+<section id="other" class="level2">
+<h2>Other</h2>
+<p>One can envision that there is a new market, like WASM or some embedded platform and then the language would benefit from specializing around that space.</p>
+</section>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Another aspect eluded to in John’s piece is what the focus of the limited resources should be focused on. With D’s current organization it falls into what someone’s personal itch is, or if there is a specific problem that people are being paid for, then that is get’s worked on. What <em>should</em> be worked on is opinion until real vision, goals, and objectives are established, probably by a governing body or collective.</p>
+<p>Other roles that are useful for longevity though are someone that sets the vision and roadmap. There are compiler developers, standard library developers, application libraries and frameworks. Documentation, building and packaging.</p>
+<p>Which part is the BDFL best suited for? I’m not sure.<span class="sidenote-wrapper"><label for="sn-10" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-10" class="margin-toggle"></input><span class="sidenote">When a business grows from the single person, to the garage, to the small office space to larger, each stage is accompanied by a paradigm shift in management. Successful businesses figure out how to navigate those disruptive changes. I imagine there is an analogous situtation going on here.<br />
+<br />
+</span></span></p>
+</section>
+<section id="afterthought" class="level1">
+<h1>Afterthought</h1>
+<p>Why did I spend time writing this? What outcome was I going for? Full disclosure, I’ve already given up on D as a language, even though it is my goto for most hack jobs that I need to do right now. However, the small community is exceptional and helps keep me grounded and connected to going ons in the greater tech area. It would be nice to contribute back to it, but not enough expert to do that with the time that I have to allocate to it.</p>
+</section>
 </article>
 </body>
 </html>
